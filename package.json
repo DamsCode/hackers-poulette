@@ -1,0 +1,22 @@
+{
+    "name": "hackers-poulette",
+    "version": "1.0.0",
+    "description": "projet becode",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DamsCode/hackers-poulette.git"
+    },
+    "author": "Damien macors",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/DamsCode/hackers-poulette/issues"
+    },
+    "homepage": "https://github.com/DamsCode/hackers-poulette#readme",
+    "dependencies": {
+        "materialize-css": "^1.0.0-rc.2"
+    }
+}

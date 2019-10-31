@@ -10,17 +10,17 @@
 
 <body>
 <div class="container center-align z-depth-3" id="block-form">
-    <form method="POST">
+    <form action="getaway.php" method="POST">
         <div class="row">
             <div class="col s12">
                 <img id="logo" src="assets/img/hackers-poulette-logo.png" alt="logo"/>
             </div>
             <div class="input-field col s6">
-                <input id="first_name" type="text" class="validate"/>
+                <input id="first_name" name="FirstName" type="text" class="validate" required/>
                 <label for="first_name">First Name</label>
             </div>
             <div class="input-field col s6">
-                <input id="last_name" type="text" class="validate"/>
+                <input id="last_name" type="text" name="LastName" class="validate" required/>
                 <label for="last_name">Last Name</label>
             </div>
             <div class="input-field col s12">
@@ -30,14 +30,14 @@
                     </div>
                     <div>
                         <label>
-                            <input class="with-gap" name="group1" type="radio"/>
+                            <input class="with-gap" name="group1" type="radio"  class="validate" required/>
                             <span>M</span>
                         </label>
                     </div>
 
                     <div>
                         <label>
-                            <input class="with-gap" name="group1" type="radio"/>
+                            <input class="with-gap" name="group1" type="radio"  class="validate" required/>
                             <span>F</span>
                         </label>
                     </div>
@@ -45,20 +45,20 @@
                 </div>
             </div>
             <div class="input-field col s12">
-                <input id="email" type="email" class="validate"/>
+                <input id="email" type="email" name="email" class="validate" required/>
                 <label for="email">Email</label>
             </div>
             <div class="input-field col s12">
-                <select>
-                    <option value="" disa selected>Choose your country</option>
+                <select  class="validate" name="county" required>
+                    <option value="" selected>Choose your country</option>
                     <option value="1">Belgium</option>
                     <option value="2">France</option>
                 </select>
                 <label>Country select</label>
             </div>
             <div class="input-field col s12">
-                <select>
-                    <option value="" disa selected>Choose your Subject</option>
+                <select name="Subject" required>
+                    <option value="" selected>Choose your Subject</option>
                     <option value="1">Sav</option>
                     <option value="2">complain</option>
                     <option value="2">option3</option>
@@ -67,7 +67,7 @@
                 <label>Subject select</label>
             </div>
             <div class="input-field col s12">
-                <textarea id="textarea" class="materialize-textarea"></textarea>
+                <textarea id="textarea" name="message" class="materialize-textarea"  class="validate" required></textarea>
                 <label for="textarea">Message</label>
             </div>
         </div>

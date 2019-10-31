@@ -1,16 +1,35 @@
-#logo {
-    width: 50%;
+@font-face {
+    font-family: "Bellofont";
+    src: url("/assets/font/Bella/Bellota-Regular.otf");
+    src: url("/assets/font/Bella/Bellota-Light.otf");
+    src: url("/assets/font/Bella/Bellota-LightItalic.otf");
+    src: url("/assets/font/Bella/Bellota-Bold.otf");
+    src: url("/assets/font/Bella/Bellota-BoldItalic.otf");
+    src: url("/assets/font/Bella/Bellota-Italic.otf");
 }
 
+
+
+body {
+    background-color: #84c7c1;
+
+}
+#block-form{
+    background-color: white;
+    padding: 5%;
+    #logo {
+        width: 50%;
+    }
+
+    #genre {
+        display: flex;
+        div:nth-child(2) {
+            margin-right: 2%;
+            margin-left: 2%;
+        }
+    }
+}
 .container {
     margin-top: 10%;
     margin-bottom: 10%;
-}
-
-#genre {
-    display: flex;
-    div:nth-child(2) {
-        margin-right: 2%;
-        margin-left: 2%;
-    }
 }

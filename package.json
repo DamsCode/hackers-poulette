@@ -4,7 +4,8 @@
     "description": "projet becode",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "scss": "node-sass --watch assets/scss -o assets/css"
     },
     "repository": {
         "type": "git",
@@ -17,6 +18,7 @@
     },
     "homepage": "https://github.com/DamsCode/hackers-poulette#readme",
     "dependencies": {
-        "materialize-css": "^1.0.0-rc.2"
+        "materialize-css": "^1.0.0-rc.2",
+        "node-sass": "^4.13.0"
     }
 }

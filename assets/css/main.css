@@ -28,4 +28,7 @@ body {
   margin-top: 10%;
   margin-bottom: 10%; }
 
+#form {
+  display: none; }
+
 /*# sourceMappingURL=main.css.map */

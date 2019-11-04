@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="eng">
 
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Hacker poulette</title>
 </head>
 
 <body>
@@ -30,14 +31,14 @@
                     </div>
                     <div>
                         <label>
-                            <input class="with-gap" name="group1" type="radio"  class="validate" required/>
+                            <input class="with-gap validate" name="genre" type="radio" value="M" required/>
                             <span>M</span>
                         </label>
                     </div>
 
                     <div>
                         <label>
-                            <input class="with-gap" name="group1" type="radio"  class="validate" required/>
+                            <input class="with-gap validate" name="genre" type="radio" value="F" required/>
                             <span>F</span>
                         </label>
                     </div>
@@ -49,25 +50,25 @@
                 <label for="email">Email</label>
             </div>
             <div class="input-field col s12">
-                <select  class="validate" name="county" required>
+                <select id="country"  class="validate" name="country" required>
                     <option value="" selected>Choose your country</option>
                     <option value="1">Belgium</option>
                     <option value="2">France</option>
                 </select>
-                <label>Country select</label>
+                <label for="country">Country select</label>
             </div>
             <div class="input-field col s12">
-                <select name="Subject" required>
+                <select id="subject" name="Subject" class="validate" required>
                     <option value="" selected>Choose your Subject</option>
                     <option value="1">Sav</option>
                     <option value="2">complain</option>
                     <option value="2">option3</option>
                     <option value="4">option4</option>
                 </select>
-                <label>Subject select</label>
+                <label for="subject">Subject select</label>
             </div>
             <div class="input-field col s12">
-                <textarea id="textarea" name="message" class="materialize-textarea"  class="validate" required></textarea>
+                <textarea id="textarea" name="message" class="materialize-textarea validate" required></textarea>
                 <label for="textarea">Message</label>
             </div>
         </div>
@@ -76,6 +77,12 @@
                 <i class="material-icons right">send</i>
             </button>
         </div>
+    </form>
+    <form id="form" method="get" action="/">
+        <input name="azdazd" type="text" value="First Name" />
+        <input name="dadaz" type="text" value="Last Name" />
+        <input id="website" name="website" type="text" value=""  />
+        <input type="submit" value="Submit" />
     </form>
 </div>
 

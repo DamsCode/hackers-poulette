@@ -31,4 +31,8 @@ body {
   margin-bottom: 10%;
 }
 
+#form {
+  display: none;
+}
+
 /*# sourceMappingURL=main.css.map */

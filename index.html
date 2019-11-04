@@ -6,12 +6,13 @@
     <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
     <title>Hacker poulette</title>
 </head>
 
 <body>
 <div class="container center-align z-depth-3" id="block-form">
-    <form action="getaway.php" method="POST">
+    <form action="getaway.php"  name="formcontact" method="POST">
         <div class="row">
             <div class="col s12">
                 <img id="logo" src="assets/img/hackers-poulette-logo.png" alt="logo"/>
@@ -31,14 +32,14 @@
                     </div>
                     <div>
                         <label>
-                            <input class="with-gap validate" name="genre" type="radio" value="M" required/>
+                            <input class="with-gap validate" name="genre" type="radio" value="M"  class="validate" required/>
                             <span>M</span>
                         </label>
                     </div>
 
                     <div>
                         <label>
-                            <input class="with-gap validate" name="genre" type="radio" value="F" required/>
+                            <input class="with-gap validate" name="genre" type="radio" value="F"  required/>
                             <span>F</span>
                         </label>
                     </div>
@@ -52,18 +53,16 @@
             <div class="input-field col s12">
                 <select id="country"  class="validate" name="country" required>
                     <option value="" selected>Choose your country</option>
-                    <option value="1">Belgium</option>
-                    <option value="2">France</option>
                 </select>
                 <label for="country">Country select</label>
             </div>
             <div class="input-field col s12">
-                <select id="subject" name="Subject" class="validate" required>
+                <select id="subject" name="subject" class="validate" required>
                     <option value="" selected>Choose your Subject</option>
-                    <option value="1">Sav</option>
-                    <option value="2">complain</option>
-                    <option value="2">option3</option>
-                    <option value="4">option4</option>
+                    <option value="Sav">Sav</option>
+                    <option value="complain">complain</option>
+                    <option value="option3">option3</option>
+                    <option value="option4">option4</option>
                 </select>
                 <label for="subject">Subject select</label>
             </div>
@@ -73,7 +72,7 @@
             </div>
         </div>
         <div id="btn-submit">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <button id="subm" class="btn waves-effect waves-light" type="submit" name="action">Submit
                 <i class="material-icons right">send</i>
             </button>
         </div>
@@ -85,9 +84,8 @@
         <input type="submit" value="Submit" />
     </form>
 </div>
-
 <script type="text/javascript" src="assets/js/materialize.min.js"></script>
-<script src="assets/js/main.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 
 </html>

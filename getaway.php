@@ -8,18 +8,19 @@ function checkEmail(string $value){
 function checkText(string $value){
     return filter_var($value,FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 }
-
+$inputfiltred = array();
 foreach ($_POST as $key => $value){
     switch ($key){
-        case "email": checkemail($value);
+        case "email": $inputfiltred[$key] = checkemail($value);
             break;
         case "LastName":
         case "FirstName":
-        case "message": checkText($value);
+        case "message": $inputfiltred[$key] = checkText($value);
             break;
         case "genre":
         case "Subject":
-        case "country": filterInput($value);
+        case "country": $inputfiltred[$key] = filterInput($value);
             break;
     }
 }
+var_dump($inputfiltred);

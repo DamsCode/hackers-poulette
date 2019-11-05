@@ -52,15 +52,17 @@ document.getElementById("form").addEventListener("submit",()=>{
     }
 });
 
-jsparse = (tabobj,elements)=>{
-    for (let i = 0; i < elements.length; i++) {
+let jsparse = (tabobj,elements)=>{
+    for (let i = 0; i < elements.length-1; i++) {
         if (elements[i].getAttribute("name") != null){
-            if (elements[i].checked ){
-                console.log(elements[i].value);
-            }else
-                console.log(elements[i].getAttribute("name")+elements[i].value);
+            if (elements[i].getAttribute("type") == "radio"){
+                if (elements[i].checked ){
+                    tabobj[elements[i].getAttribute("name")] = elements[i].value;
+                }
+            }else{
+                tabobj[elements[i].getAttribute("name")] = elements[i].value;
+            }
         }
-
     }
 };
 document.getElementById("block-form").addEventListener("submit",(e)=>{
@@ -68,14 +70,13 @@ document.getElementById("block-form").addEventListener("submit",(e)=>{
     form = document.forms.item(0);
     let objdata ={};
     jsparse(objdata,form.elements);
-
-    axios.post('/getaway.php')
+    axios.post('/getaway.php',objdata)
         .then(function (response) {
-            // handle success
-
+            if (response.status == 200){
+                console.log(response.data);
+            }
         })
         .catch(function (error) {
-            // handle error
             console.log(error);
         })
         .finally(function () {

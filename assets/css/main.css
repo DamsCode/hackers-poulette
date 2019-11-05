@@ -6527,14 +6527,10 @@ input[type=range]::-ms-thumb {
 
 @font-face {
   font-family: "Bellofont";
-  src: url("/assets/font/Bella/Bellota-Regular.otf");
-  src: url("/assets/font/Bella/Bellota-Light.otf");
-  src: url("/assets/font/Bella/Bellota-LightItalic.otf");
-  src: url("/assets/font/Bella/Bellota-Bold.otf");
-  src: url("/assets/font/Bella/Bellota-BoldItalic.otf");
-  src: url("/assets/font/Bella/Bellota-Italic.otf"); }
+  src: url("/assets/font/Bella/Bellota-Regular.otf") format("opentype"); }
 
 body {
+  font-family: "bellofont";
   background-color: #84c7c1; }
 
 #block-form {
@@ -6553,4 +6549,7 @@ body {
   margin-bottom: 10%; }
 
 #form {
+  display: none; }
+
+#panel-msg {
   display: none; }

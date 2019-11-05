@@ -70,16 +70,28 @@ document.getElementById("block-form").addEventListener("submit",(e)=>{
     form = document.forms.item(0);
     let objdata ={};
     jsparse(objdata,form.elements);
+    let panel = document.getElementById("panel-msg");
+    document.getElementById("form-c").style.display = "none";
+    let check = document.createElement("i");
+    check.classList.add("material-icons");
     axios.post('/getaway.php',objdata)
         .then(function (response) {
-            if (response.status == 200){
-                console.log(response.data);
+            if (response.status == 200 && !response.data.error){
+                panel.classList.add("green-text");
+                check.innerText = "check";
+                panel.innerText= response.data.message;
+                panel.appendChild(check);
+            }else{
+                panel.classList.add("red-text");
+                check.innerText = "error_outline";
+                panel.innerText= response.data.message;
+                panel.appendChild(check);
             }
         })
         .catch(function (error) {
             console.log(error);
         })
         .finally(function () {
-
+            panel.style.display = "block";
         });
 });

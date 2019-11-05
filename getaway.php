@@ -1,9 +1,10 @@
 <?php
 
-use PHPMailer\PHPMailer\{PHPMailer, Exception};
+use PHPMailer\PHPMailer\{PHPMailer, Exception, SMTP};
 
 require './PHPMailer/src/Exception.php';
 require './PHPMailer/src/PHPMailer.php';
+require './PHPMailer/src/SMTP.php';
 
 
 function filterInput(string $value){
@@ -16,9 +17,8 @@ function checkText(string $value){
     return filter_var($value,FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 }
 
-// Takes raw data from the request
+//gestion post(ajaj)
 $json = file_get_contents('php://input');
-// Converts it into a PHP object
 $data = json_decode($json);
 $inputfiltred = array();
 foreach ($data as $key => $value){
@@ -35,6 +35,8 @@ foreach ($data as $key => $value){
             break;
     }
 }
+
+//gestion email
 $mail = new PHPMailer();
 
 try {
@@ -44,21 +46,25 @@ try {
 
     //Recipients
     $mail->setFrom('hackdamspoul@yopmail.com', 'damien');
-    $mail->addAddress('hackdamspoul@yopmail.com', 'Joe User');     // Add a recipient
+    $mail->addAddress($inputfiltred["email"], $inputfiltred["FirstName"]." ".$inputfiltred["LastName"]);     // Add a recipient
 
     // Content
     $mail->isHTML(false);                                  // Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body ';
+    $mail->Subject = $inputfiltred["subject"];
+    $mail->Body    = $inputfiltred["message"];
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-
+//gestion reponse
     $response = array(
-        'status' => true,
-        'message' => 'Success'
+        'message' => 'Your message has been send',
+        'error' => false
     );
     echo json_encode($response);
 } catch (Exception $e) {
+    $response = array(
+        'message' => 'An error has occurred',
+        'error' => true
+    );
      echo json_encode($e->errorMessage());
 }

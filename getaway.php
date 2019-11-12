@@ -6,7 +6,6 @@ require './phpmailer/src/Exception.php';
 require './phpmailer/src/PHPMailer.php';
 require './phpmailer/src/SMTP.php';
 
-
 function filterInput(string $value){
     return  filter_var($value, FILTER_SANITIZE_FULL_SPECIAL_CHARS,FILTER_FLAG_NO_ENCODE_QUOTES);
 }

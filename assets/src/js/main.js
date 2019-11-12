@@ -1,5 +1,6 @@
 const axios = require('axios');
-axios.defaults.baseURL ="http://localhost/hackers-poulette";
+axios.defaults.baseURL = window.location.href;
+console.log(axios.defaults.baseURL);
 let tab = {
     Austria: "Austria",
     Belgium: "Belgium",

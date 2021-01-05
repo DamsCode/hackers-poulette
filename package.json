@@ -19,7 +19,7 @@
     },
     "homepage": "https://github.com/DamsCode/hackers-poulette#readme",
     "dependencies": {
-        "axios": "^0.19.0",
+        "axios": "^0.21.1",
         "materialize-css": "^1.0.0-rc.2"
     },
     "devDependencies": {
